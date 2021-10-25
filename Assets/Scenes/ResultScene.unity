@@ -700,7 +700,7 @@ MonoBehaviour:
   m_inputPanel: {fileID: 1339956928}
   m_announceText: {fileID: 354844166}
   m_gracePeriod: 10
-  m_sceneChanger: {fileID: 2124617680}
+  m_sceneChanger: {fileID: 0}
 --- !u!1 &1074178165
 GameObject:
   m_ObjectHideFlags: 0
