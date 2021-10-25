@@ -42,12 +42,12 @@ public class ResultManager : MonoBehaviour
         //    }
         //}
 
-        m_announceText.color = GetAlphaColor(m_announceText.color);
+        // m_announceText.color = GetAlphaColor(m_announceText.color);
 
-        if (Input.GetButtonDown("Jump") && !m_inputPanel.activeSelf)
-        {
-            m_sceneChanger.ChangeScene();
-        }
+        //if (Input.GetButtonDown("Jump") && !m_inputPanel.activeSelf)
+        //{
+        //    m_sceneChanger.ChangeScene();
+        //}
     }
 
 
