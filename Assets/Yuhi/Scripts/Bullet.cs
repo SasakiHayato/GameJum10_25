@@ -22,11 +22,10 @@ public class Bullet : MonoBehaviour
         m_rb.velocity = v * m_speed;
     }
 
-    public void SetParam(float speed, float angle, float curve)
+    public void SetParam(float speed, float angle)
     {
         m_speed = speed;
         m_angle = angle;
-        m_curve = curve;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

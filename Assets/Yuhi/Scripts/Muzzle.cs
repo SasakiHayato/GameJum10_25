@@ -27,8 +27,7 @@ public class Muzzle : MonoBehaviour
     bool m_isPlayer = false;
     [SerializeField, Tooltip("発射方向")]
     float m_angle;
-    [SerializeField, Tooltip("曲がるすごさ")]
-    float m_curve = 0;
+    
     private float m_randomRange = 5f;
     private GameObject m_player;
     private Types[] m_types;
@@ -43,6 +42,8 @@ public class Muzzle : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance().CurrentState != GameState.IsGame) return;
+
         m_timer += Time.deltaTime;
         if (m_timer > m_fireInterval)
         {
@@ -94,8 +95,8 @@ public class Muzzle : MonoBehaviour
         float angle = Random.Range(m_angle - 30, m_angle + 30);
         Bullet b = Instantiate(m_bulletPrefab, pos, Quaternion.identity).GetComponent<Bullet>();
         float speed = Random.Range(m_lowSpeed, m_topSpeed);
-        float curve = Random.Range(-m_curve, m_curve);
-        b.SetParam(speed, angle, curve);
+        
+        b.SetParam(speed, angle);
     }
 
     private void SetAngle()
