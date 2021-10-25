@@ -71,7 +71,7 @@ public class ResultManager : MonoBehaviour
                 m_ranking = objList;
                 MakeRankingText();
 
-                if ((score > 0 && m_ranking.Count < 5) || score > int.Parse(m_ranking[m_ranking.Count - 1]["Score"].ToString())|| m_ranking.Count == 0)
+                if ((score > 0 && m_ranking.Count < 5) || score > int.Parse(m_ranking[m_ranking.Count - 1]["Score"].ToString()) || m_ranking.Count == 0)
                 {
                     if (!m_closable)
                     {
