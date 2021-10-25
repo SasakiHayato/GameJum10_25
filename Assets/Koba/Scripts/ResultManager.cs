@@ -10,6 +10,7 @@ public class ResultManager : MonoBehaviour
     [SerializeField] Text m_rankingText;
     [SerializeField] InputField m_nameInput;
     [SerializeField] RectTransform m_entryPanel;
+    [SerializeField] GameObject m_inputPanel;
     [SerializeField] Text m_announceText;
     [SerializeField] float m_gracePeriod = 10f;
     [SerializeField] SceneChanger m_sceneChanger;
@@ -125,5 +126,14 @@ public class ResultManager : MonoBehaviour
         c.a = Mathf.Sin(m_timer) * 6.0f;
 
         return c;
+    }
+
+    public void OnEnter()
+    {
+        if (m_nameInput.text != "")
+        {
+            Save();
+            m_inputPanel.SetActive(false);
+        }
     }
 }
