@@ -5,25 +5,28 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private float m_speed;
-    private Vector2 m_angle;
+    private float m_angle;
+    private float m_curve;
     private Rigidbody2D m_rb;
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
+        transform.Rotate(0, 0, m_angle);
     }
 
     private void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(m_angle);
-        m_angle.Normalize();
-        m_rb.velocity = m_angle * m_speed;
+        transform.Rotate(0, 0, m_curve);
+        Vector2 v = transform.rotation * Vector2.up;
+        m_rb.velocity = v * m_speed;
     }
 
-    public void SetParam(float speed, Vector2 angle)
+    public void SetParam(float speed, float angle, float curve)
     {
         m_speed = speed;
         m_angle = angle;
+        m_curve = curve;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

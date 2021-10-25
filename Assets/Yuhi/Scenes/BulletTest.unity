@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &255796387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,14 +151,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
-  m_sPos: 1
+  m_sPos: 2
   m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
     type: 3}
-  m_speed: 5
+  m_lowSpeed: 3
+  m_topSpeed: 8
   m_fireInterval: 1
   m_addFireInterval: 1
+  m_addRange: 0.01
   m_isPlayer: 0
-  m_angle: {x: 0, y: 1}
+  m_angle: 0
+  m_curve: 0
 --- !u!4 &255796388
 Transform:
   m_ObjectHideFlags: 0
@@ -171,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335548950
 GameObject:
@@ -246,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360193432
 Transform:
   m_ObjectHideFlags: 0
@@ -259,7 +262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &360193433
 MonoBehaviour:
@@ -274,14 +277,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
-  m_sPos: 0
+  m_sPos: 1
   m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
     type: 3}
-  m_speed: 5
+  m_lowSpeed: 3
+  m_topSpeed: 8
   m_fireInterval: 1
   m_addFireInterval: 1
+  m_addRange: 0.01
   m_isPlayer: 0
-  m_angle: {x: 1, y: 0}
+  m_angle: 270
+  m_curve: 0
 --- !u!1 &865487949
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &865487950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,14 +318,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
-  m_sPos: 0
+  m_sPos: 1
   m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
     type: 3}
-  m_speed: 5
+  m_lowSpeed: 3
+  m_topSpeed: 8
   m_fireInterval: 1
   m_addFireInterval: 1
+  m_addRange: 0.01
   m_isPlayer: 0
-  m_angle: {x: -1, y: 0}
+  m_angle: 90
+  m_curve: 0
 --- !u!4 &865487951
 Transform:
   m_ObjectHideFlags: 0
@@ -332,7 +341,92 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &884179573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884179575}
+  - component: {fileID: 884179574}
+  m_Layer: 0
+  m_Name: Muzzle atPlayer (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &884179574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884179573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e6821658f20b0408638261f48f863f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_sPos: 0
+  m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
+    type: 3}
+  m_lowSpeed: 3
+  m_topSpeed: 6
+  m_fireInterval: 1
+  m_addFireInterval: 1
+  m_addRange: 0.01
+  m_isPlayer: 1
+  m_angle: 0
+  m_curve: 0.5
+--- !u!4 &884179575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884179573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1011207783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011207784}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011207784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011207783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111134880
 GameObject:
@@ -350,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1111134881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,14 +458,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_type: 0
-  m_sPos: 1
+  m_sPos: 2
   m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
     type: 3}
-  m_speed: 5
+  m_lowSpeed: 3
+  m_topSpeed: 8
   m_fireInterval: 1
   m_addFireInterval: 1
+  m_addRange: 0.01
   m_isPlayer: 0
-  m_angle: {x: 0, y: -1}
+  m_angle: 180
+  m_curve: 0
 --- !u!4 &1111134882
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239185670
 GameObject:
@@ -468,4 +565,169 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1436259418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436259420}
+  - component: {fileID: 1436259419}
+  m_Layer: 0
+  m_Name: Muzzle atPlayer (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1436259419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436259418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e6821658f20b0408638261f48f863f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_sPos: 0
+  m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
+    type: 3}
+  m_lowSpeed: 3
+  m_topSpeed: 6
+  m_fireInterval: 1
+  m_addFireInterval: 1
+  m_addRange: 0.01
+  m_isPlayer: 1
+  m_angle: 0
+  m_curve: 0.5
+--- !u!4 &1436259420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436259418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1581127947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581127949}
+  - component: {fileID: 1581127948}
+  m_Layer: 0
+  m_Name: Muzzle atPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1581127948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581127947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e6821658f20b0408638261f48f863f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_sPos: 0
+  m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
+    type: 3}
+  m_lowSpeed: 3
+  m_topSpeed: 6
+  m_fireInterval: 1
+  m_addFireInterval: 1
+  m_addRange: 0.01
+  m_isPlayer: 1
+  m_angle: 0
+  m_curve: 0.5
+--- !u!4 &1581127949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581127947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1671363611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671363613}
+  - component: {fileID: 1671363612}
+  m_Layer: 0
+  m_Name: Muzzle atPlayer (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1671363612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671363611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e6821658f20b0408638261f48f863f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_type: 0
+  m_sPos: 0
+  m_bulletPrefab: {fileID: 5136462198509515783, guid: bb6cd0beff968834698a76b81b937ba0,
+    type: 3}
+  m_lowSpeed: 3
+  m_topSpeed: 6
+  m_fireInterval: 1
+  m_addFireInterval: 1
+  m_addRange: 0.01
+  m_isPlayer: 1
+  m_angle: 0
+  m_curve: 0.5
+--- !u!4 &1671363613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671363611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
