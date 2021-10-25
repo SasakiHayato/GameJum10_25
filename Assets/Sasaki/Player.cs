@@ -33,8 +33,10 @@ public class Player : MonoBehaviour
         GameObject glaze = new GameObject("Glaze");
         _glaze = glaze.AddComponent<GlazeSytem>();
         _glaze.Player = gameObject;
+        _glaze.SetUp();
         CircleCollider2D circle = glaze.AddComponent<CircleCollider2D>();
         circle.isTrigger = true;
+        circle.radius = 0.5f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
