@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //if (GameManager.Instance().CurrentState != GameState.IsGame) return;
+        if (GameManager.Instance().CurrentState != GameState.IsGame) return;
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -41,8 +41,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("死んだ");
-            //GameManager.Instance().ChangeGameState(GameState.Died);
+            GameManager.Instance().ChangeGameState(GameState.Died);
+            GameManager.Instance().Died();
         }
     }
 }

@@ -36,8 +36,19 @@ public class GameManager
     }
     public void Died()
     {
-        
+        GameObject[] games = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject bullet in games)
+        {
+            MonoBehaviour.Destroy(bullet);
+        }
+
+        UiManager ui = GameObject.FindObjectOfType<UiManager>();
+        ui.Deadpanel();
     }
 
-    public float GetScore(float set) => _score = set;
+    public void GetScore(float set)
+    {
+        _score = set;
+        Debug.Log(_score);
+    }
 }

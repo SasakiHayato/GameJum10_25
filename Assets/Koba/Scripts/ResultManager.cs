@@ -19,11 +19,13 @@ public class ResultManager : MonoBehaviour
     float m_timer;
     bool m_closable = false;
 
-    private void Start()
+    void Start()
     {
         m_scoreText.text = GameManager.Instance().ResultScore.ToString();
+        int set = (int)GameManager.Instance().ResultScore;
 
-        MakeRankingText();
+        //MakeRankingText();
+        GetRanking(set);
     }
 
     void Update()

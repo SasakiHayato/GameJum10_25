@@ -18,7 +18,6 @@ public class GlazeSytem : MonoBehaviour
     void Set()
     {
         _glazePoint++;
-        Debug.Log(_glazePoint);
 
         if (_glazePoint > 10) Go = true;
     }
@@ -27,7 +26,6 @@ public class GlazeSytem : MonoBehaviour
     {
         Go = false;
         _glazePoint = 0;
-        Debug.Log("Bom");
         GameObject[] get = GameObject.FindGameObjectsWithTag("Bullet");
         foreach (var item in get)
         {

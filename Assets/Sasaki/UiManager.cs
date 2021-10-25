@@ -9,19 +9,24 @@ public class UiManager : MonoBehaviour
     [SerializeField] Text _scoreText;
     [SerializeField] GameObject _opretions;
     [SerializeField] GameObject _countPanel;
+    [SerializeField] GameObject _deadPanel;
 
     Text _countText;
     float _countTime = 4;
+    float _score;
+    string _scoreStr;
+
+    bool _isSet = false;
 
     void Start()
     {
         _countPanel.SetActive(false);
+        _deadPanel.SetActive(false);
+        _scoreStr = _scoreText.text;
     }
 
     void Update()
     {
-        float time = GameManager.Instance().CurrentTime();
-       
         CountDown();
         Score();
     }
@@ -32,6 +37,15 @@ public class UiManager : MonoBehaviour
         GameManager.Instance().ChangeGameState(GameState.Count);
         _countPanel.SetActive(true);
         _countText = _countPanel.transform.GetChild(0).GetComponent<Text>();
+    }
+
+    public void Deadpanel()
+    {
+        if (_isSet) return;
+        _isSet = true;
+        
+        _deadPanel.SetActive(true);
+        GameManager.Instance().GetScore(_score);
     }
 
     void CountDown()
@@ -58,8 +72,7 @@ public class UiManager : MonoBehaviour
     {
         float time = GameManager.Instance().CurrentTime();
         float score = time * _setScore;
-        _scoreText.text = score.ToString(_scoreText.text);
-        
-        GameManager.Instance().GetScore(score);
+        _scoreText.text = score.ToString(_scoreStr);
+        _score = score;
     }
 }
