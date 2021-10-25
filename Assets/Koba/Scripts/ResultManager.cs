@@ -46,7 +46,7 @@ public class ResultManager : MonoBehaviour
         }
     }
 
-  
+
     public void GetRanking(int score)
     {
         m_score = score;
@@ -63,7 +63,7 @@ public class ResultManager : MonoBehaviour
             }
             else
             {
-                
+
                 m_ranking = objList;
                 MakeRankingText();
 
