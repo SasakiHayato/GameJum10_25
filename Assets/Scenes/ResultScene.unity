@@ -697,6 +697,7 @@ MonoBehaviour:
   m_rankingText: {fileID: 1688998255}
   m_nameInput: {fileID: 1410311087}
   m_entryPanel: {fileID: 1688998254}
+  m_inputPanel: {fileID: 1339956928}
   m_announceText: {fileID: 354844166}
   m_gracePeriod: 10
   m_sceneChanger: {fileID: 2124617680}
@@ -1298,19 +1299,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1058468533}
-        m_MethodName: Save
+        m_MethodName: OnEnter
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1339956928}
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
