@@ -2032,6 +2032,11 @@ PrefabInstance:
       propertyPath: _speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5540667765848938450, guid: 6d1627798ca4a7d4f8e8271e56378033,
+        type: 3}
+      propertyPath: _radius
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5540667765848938453, guid: 6d1627798ca4a7d4f8e8271e56378033,
         type: 3}
       propertyPath: m_Name
