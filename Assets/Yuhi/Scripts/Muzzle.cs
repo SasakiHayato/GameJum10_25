@@ -12,12 +12,14 @@ public class Muzzle : MonoBehaviour
     [SerializeField] GameObject m_bulletPrefab;
     [SerializeField] float m_speed = 1f;
     [SerializeField] float m_fireInterval = 1f;
+    [SerializeField] float m_addFireInterval = 1f;
     [SerializeField] bool m_isPlayer = false;
     [SerializeField] Vector2 m_angle;
     private float m_randomRange = 5f;
     private GameObject m_player;
     private Types[] m_types;
     private float m_timer = 99;
+    private float m_fireTimer = 0;
 
     void Start()
     {
@@ -33,7 +35,13 @@ public class Muzzle : MonoBehaviour
             m_timer = 0;
             m_types[(int)m_type]();
         }
-        m_fireInterval += 0.00001f;
+
+        m_fireTimer += Time.deltaTime;
+        if (m_fireTimer > m_addFireInterval)
+        {
+            m_fireTimer = 0;
+            m_fireInterval -= 0.01f;
+        }
     }
 
     private void SetTypes()
