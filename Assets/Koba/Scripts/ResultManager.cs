@@ -10,17 +10,13 @@ public class ResultManager : MonoBehaviour
     [SerializeField] Text m_announceText;
     [SerializeField] SceneChanger m_sceneChanger;
 
+    float[] m_ranking;
     float m_timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        // m_scoreText.text = 
-
-        for (int i = 0; i < 5; i++)
-        {
-            // m_rankingText.text = i+1 + "、名前" + "　スコア"
-        }
+        m_scoreText.text = GameManager.Instance().ResultScore.ToString();
     }
 
     // Update is called once per frame
