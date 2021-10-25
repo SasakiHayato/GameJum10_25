@@ -15,27 +15,28 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            SetBGM();
             DontDestroyOnLoad(this);
         }
     }
 
-    private void Start()
+    public void SetBGM()
     {
         m_audioSource = GetComponent<AudioSource>();
 
-        if (SceneManager.GetActiveScene().name == "TitleScene")
+        if (GameManager.Instance().CurrentType == BGMType.Title)
         {
             m_audioSource.Stop();
             m_audioSource.clip = m_audioClips[0];
             m_audioSource.Play();
         }
-        else if (SceneManager.GetActiveScene().name == "MainScene")
+        else if (GameManager.Instance().CurrentType == BGMType.Main)
         {
             m_audioSource.Stop();
             m_audioSource.clip = m_audioClips[1];
             m_audioSource.Play();
         }
-        else if (SceneManager.GetActiveScene().name == "ResultScene")
+        else if (GameManager.Instance().CurrentType == BGMType.Result)
         {
             m_audioSource.Stop();
             m_audioSource.clip = m_audioClips[2];

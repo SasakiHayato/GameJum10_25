@@ -53,7 +53,8 @@ public class UiManager : MonoBehaviour
         if (GameManager.Instance().CurrentState == GameState.Count)
         {
             _countTime -= Time.deltaTime;
-            _countText.text = _countTime.ToString();
+            int set = (int)_countTime;
+            _countText.text = set.ToString();
 
             if (_countTime > 0 && _countTime < 1)
             {

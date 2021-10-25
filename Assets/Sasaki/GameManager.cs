@@ -11,6 +11,16 @@ public enum GameState
     None,
 }
 
+public enum BGMType
+{
+    Title,
+    Main,
+    Result,
+
+    None,
+}
+
+
 public class GameManager
 {
     // シングルトン
@@ -25,7 +35,11 @@ public class GameManager
     public GameState CurrentState { get => _current; }
     GameState _current = GameState.None;
 
+    public BGMType CurrentType { get => _bgm; }
+    BGMType _bgm = BGMType.Title;
+
     public GameState ChangeGameState(GameState state) => _current = state;
+    public BGMType ChangeBGMType(BGMType type) => _bgm = type;
 
     public float CurrentTime()
     {
@@ -34,6 +48,7 @@ public class GameManager
         
         return _timer;
     }
+
     public void Died()
     {
         GameObject[] games = GameObject.FindGameObjectsWithTag("Bullet");
@@ -46,9 +61,5 @@ public class GameManager
         ui.Deadpanel();
     }
 
-    public void GetScore(float set)
-    {
-        _score = set;
-        Debug.Log(_score);
-    }
+    public void GetScore(float set) => _score = set;
 }

@@ -929,9 +929,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.068
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1027,9 +1027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audioSource: {fileID: 1378454299}
   m_audioClips:
-  - {fileID: 8300000, guid: 7075b14f6dd61f644a22ec62de466097, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 2d2a3fe8690d9204285253a8eb115710, type: 3}
+  - {fileID: 8300000, guid: bab66241cd160f648b5e2346f2a5cc3f, type: 3}
+  - {fileID: 8300000, guid: 054454970cafb5d4bbb09897644a84ed, type: 3}
 --- !u!4 &1378454301
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,6 +1176,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1268468103}
         m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8472572897894117451, guid: f2d5a75b27de08e4db717216216288a8,
+          type: 3}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
