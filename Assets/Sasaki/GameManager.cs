@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    IsGame,
+    Count,
+    Died,
+
+    None,
+}
+
 public class GameManager
 {
     // シングルトン
@@ -11,7 +20,20 @@ public class GameManager
 
     public float ResultScore { get => _score; }
     float _score;
+    float _timer;
 
+    public GameState CurrentState { get => _current; }
+    GameState _current = GameState.None;
+
+    public GameState ChangeGameState(GameState state) => _current = state;
+
+    public float CurrentTime()
+    {
+        if (_current != GameState.IsGame) return _timer = 0;
+        _timer += Time.deltaTime;
+        
+        return _timer;
+    }
     public void Died()
     {
         
