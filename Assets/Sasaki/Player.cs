@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0;
+
+        Debug.Log(GameManager.Instance());
+        Debug.Log(GameManager.Instance().ResultScore);
     }
 
     void Update()
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("死んだ");
+            GameManager.Instance().Died();
         }
     }
 }
