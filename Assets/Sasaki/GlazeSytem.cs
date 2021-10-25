@@ -28,6 +28,11 @@ public class GlazeSytem : MonoBehaviour
         Go = false;
         _glazePoint = 0;
         Debug.Log("Bom");
+        GameObject[] get = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (var item in get)
+        {
+            Destroy(item);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
