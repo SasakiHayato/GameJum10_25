@@ -24,6 +24,7 @@ public class ResultManager : MonoBehaviour
     {
         m_scoreText.text = GameManager.Instance().ResultScore.ToString();
         int set = (int)GameManager.Instance().ResultScore;
+        m_closable = false;
 
         //MakeRankingText();
         GetRanking(set);
@@ -31,19 +32,19 @@ public class ResultManager : MonoBehaviour
 
     void Update()
     {
-        if (!m_closable)
-        {
-            m_timer += Time.deltaTime;
+        //if (!m_closable)
+        //{
+        //    m_timer += Time.deltaTime;
 
-            if (m_timer > m_gracePeriod)
-            {
-                m_closable = true;
-            }
-        }
+        //    if (m_timer > m_gracePeriod)
+        //    {
+        //        m_closable = true;
+        //    }
+        //}
 
         m_announceText.color = GetAlphaColor(m_announceText.color);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !m_inputPanel.activeSelf)
         {
             m_sceneChanger.ChangeScene();
         }
@@ -70,9 +71,12 @@ public class ResultManager : MonoBehaviour
                 m_ranking = objList;
                 MakeRankingText();
 
-                if ((score > 0 && m_ranking.Count < 5) || score > int.Parse(m_ranking[m_ranking.Count - 1]["Score"].ToString()) || m_ranking.Count == 0)
+                if ((score > 0 && m_ranking.Count < 5) || score > int.Parse(m_ranking[m_ranking.Count - 1]["Score"].ToString())|| m_ranking.Count == 0)
                 {
-                    m_entryPanel.gameObject.SetActive(true);
+                    if (!m_closable)
+                    {
+                        m_inputPanel.SetActive(true);
+                    }
                 }
             }
         });
@@ -134,6 +138,7 @@ public class ResultManager : MonoBehaviour
         {
             Save();
             m_inputPanel.SetActive(false);
+            m_closable = true;
         }
     }
 }
