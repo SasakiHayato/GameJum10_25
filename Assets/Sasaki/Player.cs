@@ -20,12 +20,17 @@ public class Player : MonoBehaviour
     {
         if (GameManager.Instance().CurrentState != GameState.IsGame) return;
 
+        float rate = 1;
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButtonDown("Jump") && _glaze.Go) _glaze.GoBom();
 
-        _rb.velocity = new Vector2(h, v).normalized * _speed;
+        if (Input.GetButton("Fire3"))
+            rate = 2;
+
+        _rb.velocity = new Vector2(h, v).normalized * _speed / rate;
     }
 
     void SetUp()

@@ -23,6 +23,7 @@ public class GlazeSytem : MonoBehaviour
     {
         _glazePoint++;
         _glazeImage.fillAmount = (float)_glazePoint / 10;
+        
         if (_glazePoint >= 10) Go = true;
     }
 
@@ -35,6 +36,7 @@ public class GlazeSytem : MonoBehaviour
 
     public void GoBom()
     {
+        _glazeImage.fillAmount = 0;
         Go = false;
         _glazePoint = 0;
         GameObject[] get = GameObject.FindGameObjectsWithTag("Bullet");
