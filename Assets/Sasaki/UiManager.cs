@@ -47,13 +47,29 @@ public class UiManager : MonoBehaviour
         _deadPanel.SetActive(true);
         GameManager.Instance().GetScore(_score);
     }
-
+    int _saveNum = int.MaxValue;
     void CountDown()
     {
         if (GameManager.Instance().CurrentState == GameState.Count)
         {
             _countTime -= Time.deltaTime;
+            
             int set = (int)_countTime;
+            if (_saveNum != set && set != 0)
+            {
+                _saveNum = set;
+                AudioSource source = FindObjectOfType<AudioSource>();
+                AudioClip clip = (AudioClip)Resources.Load("CountDown");
+                source.PlayOneShot(clip);
+            }
+            else if (_saveNum != set && set == 0)
+            {
+                _saveNum = set;
+                AudioSource source = FindObjectOfType<AudioSource>();
+                AudioClip clip = (AudioClip)Resources.Load("GoCount");
+                source.PlayOneShot(clip);
+            }
+            
             _countText.text = set.ToString();
 
             if (_countTime > 0 && _countTime < 1)
