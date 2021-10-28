@@ -9,7 +9,18 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeScene()
     {
-        Invoke("Load", 1);
+        Fade.FadeOut(1);
+        //Invoke("Load", 1);
+        StartCoroutine(Set());
+    }
+
+    IEnumerator Set()
+    {
+        while (!Fade.IsFade)
+        {
+            yield return null;
+        }
+        Load();
     }
 
     void Load()
